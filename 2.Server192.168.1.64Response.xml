@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope
+    xmlns:soap="http://www.w3.org/2003/05/soap-envelope"
+    xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+    xmlns:wsd="http://schemas.xmlsoap.org/ws/2005/04/discovery"
+    xmlns:dn="http://www.onvif.org/ver10/network/wsdl"
+    xmlns:tds="http://www.onvif.org/ver10/device/wsdl" >
+    <soap:Header>
+        <wsa:Action>http://schemas.xmlsoap.org/ws/2005/04/discovery/ProbeMatches</wsa:Action>
+        <wsa:MessageID>uuid:dc4cabf2-d6e9-11e4-bba4-8ce7482b3278</wsa:MessageID>
+        <wsa:RelatesTo>urn:uuid:16257d68a-1dd2-11b2-a105-010203040506</wsa:RelatesTo>
+        <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+        <wsd:AppSequence InstanceId="1427726063" MessageNumber="117"/>
+    </soap:Header>
+    <soap:Body>
+        <wsd:ProbeMatches>
+            <wsd:ProbeMatch>
+                <wsa:EndpointReference>
+                    <wsa:Address>urn:uuid:e97a9c46-e731-4a48-8c56-e6f1ab54df1f</wsa:Address>
+                </wsa:EndpointReference>
+                <wsd:Types>dn:NetworkVideoTransmitter tds:Device</wsd:Types>
+                <wsd:Scopes>onvif://www.onvif.org/type/video_encoder onvif://www.onvif.org/type/ptz onvif://www.onvif.org/type/audio_encoder onvif://www.onvif.org/hardware/DS-7808N-SH onvif://www.onvif.org/location/country/china onvif://www.onvif.org/Profile/Streaming onvif://www.onvif.org/name/Embedded_Net_DVR onvif://www.onvif.org/type/Network_Video_Storage </wsd:Scopes>
+                <wsd:XAddrs>http://192.168.1.64:80/onvif/device_service</wsd:XAddrs>
+                <wsd:MetadataVersion>10</wsd:MetadataVersion>
+            </wsd:ProbeMatch>
+        </wsd:ProbeMatches>
+    </soap:Body>
+</soap:Envelope>
