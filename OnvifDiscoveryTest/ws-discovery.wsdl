@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+ targetNamespace="http://schemas.xmlsoap.org/ws/2005/04/discovery"
+    xmlns:tns="http://schemas.xmlsoap.org/ws/2005/04/discovery"
+    xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+    <wsdl:types>
+        <xs:schema>
+            <xs:import namespace="http://schemas.xmlsoap.org/ws/2005/04/discovery" schemaLocation ="http://schemas.xmlsoap.org/ws/2005/04/discovery/ws-discovery.xsd" />
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="HelloMsg" >
+        <wsdl:part name="body" element="tns:Hello" />
+    </wsdl:message>
+    <wsdl:message name="ByeMsg" >
+        <wsdl:part name="body" element="tns:Bye" />
+    </wsdl:message>
+    <wsdl:message name="ProbeMsg" >
+        <wsdl:part name="body" element="tns:Probe" />
+    </wsdl:message>
+    <wsdl:message name="ProbeMatchMsg" >
+        <wsdl:part name="body" element="tns:ProbeMatches" />
+    </wsdl:message>
+    <wsdl:message name="ResolveMsg" >
+        <wsdl:part name="body" element="tns:Resolve" />
+    </wsdl:message>
+    <wsdl:message name="ResolveMatchMsg" >
+        <wsdl:part name="body" element="tns:ResolveMatches" />
+    </wsdl:message>
+    <wsdl:portType name="TargetService" >
+        <wsdl:operation name="HelloOp" >
+            <wsdl:output message="tns:HelloMsg" wsa:Action ="http://schemas.xmlsoap.org/ws/2005/04/discovery/Hello" />
+        </wsdl:operation>
+        <wsdl:operation name="ByeOp" >
+            <wsdl:output message="tns:ByeMsg" wsa:Action ="http://schemas.xmlsoap.org/ws/2005/04/discovery/Bye" />
+        </wsdl:operation>
+        <wsdl:operation name="ProbeOp" >
+            <wsdl:input message="tns:ProbeMsg" wsa:Action ="http://schemas.xmlsoap.org/ws/2005/04/discovery/Probe" />
+        </wsdl:operation>
+        <wsdl:operation name="ProbeMatchOp" >
+            <wsdl:output message="tns:ProbeMatchMsg" wsa:Action ="http://schemas.xmlsoap.org/ws/2005/04/discovery/ProbeMatches" />
+        </wsdl:operation>
+        <wsdl:operation name="ResolveOp" >
+            <wsdl:input message="tns:ResolveMsg" wsa:Action ="http://schemas.xmlsoap.org/ws/2005/04/discovery/Resolve" />
+        </wsdl:operation>
+        <wsdl:operation name="ResolveMatchOp" >
+            <wsdl:output message="tns:ResolveMatchMsg" wsa:Action ="http://schemas.xmlsoap.org/ws/2005/04/discovery/ResolveMatches" />
+        </wsdl:operation>
+    </wsdl:portType>
+    <!-- If this portType is included in EndpointReference/Types, it
+ indicates the Target Service is a Discovery Proxy. Discovery
+ Proxies also implement tns:TargetService and optionally other
+ message exchanges defined elsewhere.
+ -->
+    <wsdl:portType name="DiscoveryProxy" />
+</wsdl:definitions> 
