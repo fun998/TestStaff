@@ -1559,3 +1559,103 @@ soap_wsdd_delay(struct soap *soap)
   usleep(delay);
 #endif
 }
+
+/******************************************************************************\
+ *
+ *	User-defined WS-Discovery event handlers
+ *
+\******************************************************************************/
+
+/*
+ TODO: all below are stub now
+*/
+
+int SOAP_ENV__Fault(struct soap* soap, 
+	char *faultcode, 
+	char *faultstring, 
+	char *faultactor, 
+	struct SOAP_ENV__Detail *detail, 
+	struct SOAP_ENV__Code *SOAP_ENV__Code, 
+	struct SOAP_ENV__Reason *SOAP_ENV__Reason, 
+	char *SOAP_ENV__Node, 
+	char *SOAP_ENV__Role, 
+	struct SOAP_ENV__Detail *SOAP_ENV__Detail)
+{
+	return 0;
+}
+
+void wsdd_event_Hello(struct soap *soap,
+	unsigned int InstanceId, 
+	const char *SequenceId, 
+	unsigned int MessageNumber, 
+	const char *MessageID, 
+	const char *RelatesTo, 
+	const char *EndpointReference, 
+	const char *Types, 
+	const char *Scopes, 
+	const char *MatchBy, 
+	const char *XAddrs, 
+	unsigned int MetadataVersion)
+{
+	printf("wsdd_event_Hello!\n");
+}
+
+void wsdd_event_Bye(struct soap *soap, 
+	unsigned int InstanceId, 
+	const char *SequenceId, 
+	unsigned int MessageNumber, 
+	const char *MessageID, 
+	const char *RelatesTo, 
+	const char *EndpointReference, 
+	const char *Types, 
+	const char *Scopes, 
+	const char *MatchBy, 
+	const char *XAddrs, 
+	unsigned int *MetadataVersion)
+{
+	printf("wsdd_event_Bye!\n");
+}
+
+soap_wsdd_mode wsdd_event_Probe(struct soap *soap, 
+	const char *MessageID, 
+	const char *ReplyTo, 
+	const char *Types, 
+	const char *Scopes, 
+	const char *MatchBy, 
+	struct wsdd__ProbeMatchesType *matches)
+{
+	printf("wsdd_event_Probe!\n");
+	return SOAP_WSDD_ADHOC;
+}
+
+void wsdd_event_ProbeMatches(struct soap *soap, 
+	unsigned int InstanceId, 
+	const char *SequenceId, 
+	unsigned int MessageNumber, 
+	const char *MessageID, 
+	const char *RelatesTo, 
+	struct wsdd__ProbeMatchesType *matches)
+{
+	printf("wsdd_event_ProbeMatches!\n");
+}
+
+soap_wsdd_mode wsdd_event_Resolve(struct soap *soap, 
+	const char *MessageID, 
+	const char *ReplyTo, 
+	const char *EndpointReference, 
+	struct wsdd__ResolveMatchType *match)
+{
+	printf("wsdd_event_Resolve!\n");
+	return SOAP_WSDD_ADHOC;
+}
+
+void wsdd_event_ResolveMatches(struct soap *soap, 
+	unsigned int InstanceId, 
+	const char *SequenceId, 
+	unsigned int MessageNumber, 
+	const char *MessageID, 
+	const char *RelatesTo, 
+	struct wsdd__ResolveMatchType *match)
+{
+	printf("wsdd_event_ResolveMatches!\n");
+}

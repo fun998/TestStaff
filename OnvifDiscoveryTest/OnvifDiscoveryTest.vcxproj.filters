@@ -36,6 +36,12 @@
     <ClCompile Include="wsddapi.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="eventhandlers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="discoWSH.h">
@@ -56,5 +62,10 @@
     <ClInclude Include="wsddapi.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wsdd.nsmap">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
