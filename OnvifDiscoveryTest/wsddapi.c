@@ -1555,7 +1555,7 @@ soap_wsdd_delay(struct soap *soap)
   DWORD delay = 1000*(soap_random % SOAP_WSDD_APP_MAX_DELAY);
   Sleep(delay);
 #else
-  usecond_t deleay = 1000*(soap_random % SOAP_WSDD_APP_MAX_DELAY);
+  useconds_t delay = 1000*(soap_random % SOAP_WSDD_APP_MAX_DELAY);
   usleep(delay);
 #endif
 }
