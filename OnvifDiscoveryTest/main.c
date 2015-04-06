@@ -1,6 +1,8 @@
 #include <stdio.h>
-#include "wsdd.nsmap"
+#include "stdsoap2.h"
+#include "discoWSStub.h"
 #include "discoWSH.h"
+#include "wsdd.nsmap"
 #include "wsaapi.h"
 #include "wsddapi.h"
 
@@ -38,8 +40,6 @@ int main()
 	if(result != NULL)
 		printf("%d: %d\n", result, soap->error);
 	
-
-
 	//if((soap_recv___wsdd__ProbeMatches(soap, &respTmp) == SOAP_OK) && !soap->error)
 	//{
 	//	printf("Device Service Address  : %s\r\n", resp.wsdd__ProbeMatches->ProbeMatch->XAddrs);    
