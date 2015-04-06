@@ -17,12 +17,12 @@ wsaapi.o : discoWSC.o wsaapi.c wsaapi.h
 threads.o : threads.c threads.h
 	gcc -c threads.c -o threads.o
 
-stdsoap2.o : stdsoap2.c stdsoap.h
+stdsoap2.o : stdsoap2.c stdsoap2.h
 	gcc -c stdsoap2.c -o stdsoap2.o
 
 discoWSC.o : discoWSC.c discoWSH.h discoWSStub.h
 	gcc -c discoWSC.c -o discoWSC.o
 
-.PHONY clean
+.PHONY clean :
 clean:
 	rm *.o
